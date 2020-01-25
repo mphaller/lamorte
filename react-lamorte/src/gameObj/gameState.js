@@ -4,5 +4,6 @@ export const gameState = () => {
         dealer: null,
         round: 1,
         deck: [],
+        gameOver: true,
     }
 }

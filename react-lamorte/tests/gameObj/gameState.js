@@ -8,5 +8,6 @@ describe('gameObj gameState', () => {
         expect(result.dealer).toBeNull();
         expect(result.deck).toBeDefined();
         expect(result.round).toEqual(1);
+        expect(result.gameOver).toBeTruthy();
     });
 });
