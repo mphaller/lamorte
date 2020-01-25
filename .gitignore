@@ -7,5 +7,11 @@
 .pnp.js
 .vscode
 
+react-lamorte/build
+react-lamorte/node_modules
+react-lamorte/npm-debug.log
+react-lamorte/tests/__coverage__
+react-lamorte/yarn-debug.log
+react-lamorte/yarn-error.log
 
 NOTES
