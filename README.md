@@ -4,18 +4,20 @@ La Morte is trick-taking card game for three to five players.
 
 ## Game Rules
 
-https://www.pagat.com/invented/la_morte.html
+[pagat.com > Invented Games > La Morte](https://www.pagat.com/invented/la_morte.html)
 
-## Directory
+## Projects
 
-### react-lamorte
+### [react-lamorte](https://github.com/mphaller/lamorte/tree/master/react-lamorte)
 
 La Morte implemented in React/Redux.
 
 ## Ongoing Development
 
-See `CHANGELOG.md` for devleopment notes.
+[CHANGELOG.md](https://github.com/mphaller/lamorte/blob/master/CHANGELOG.md) for devleopment notes.
 
 ## License
 
-This source code is free for non-commerical and non-profit use. See `LICENSE` for details.
+This source code is free for non-commerical and non-profit use.
+
+[LICENSE](https://github.com/mphaller/lamorte/blob/master/LICENSE) for details.

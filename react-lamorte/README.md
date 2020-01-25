@@ -1,8 +1,8 @@
 # La Morte - React
 
-La Morte implemented in React/Redux.
+[La Morte](https://github.com/mphaller/lamorte) implemented in [React](https://reactjs.org/)/[Redux](https://redux.js.org/).
 
-## Commands
+## Usage Scripts
 
 Package manager is [Yarn](https://legacy.yarnpkg.com/en/).
 
@@ -12,16 +12,17 @@ Installs all dependencies.
 
 ### yarn test
 
-Run unit tests. 
+Runs unit tests. Testing framework is [Jest](https://jestjs.io/) with [Enzyme](https://airbnb.io/enzyme/). Test compliation is [Babel](https://github.com/babel/babel) via [Babel-Jest](https://github.com/facebook/jest/tree/master/packages/babel-jest).
 
-Use `yarn test:watch` to enter watch mode.
-Use `yarn test:coverage` to generate a coverage report.
-Use `yarn test:snapshots` to refresh snapshot tests after modification.
+Includes options: 
+* `test:watch` runs in continuous watch mode.
+* `test:coverage` generates a coverage report after running.
+* `test:snapshots` refreshes snapshot tests after running.
 
 ### yarn start
 
-Open a local dev server. Default port is 3000.
+Opens a local dev server.
 
 ### yarn build
 
-Produce a production build in the `build` directory.
+Produces a production build in `/build`.
