@@ -6,6 +6,30 @@ const middlewares = [];
 const mockStore = configureStore(middlewares);
 
 describe('ctrl actions', () => {
+  describe('dealerElect', () => {
+    test('Dispatches the DEALER_ELECT action', () => {
+      const store = mockStore({});
+      store.dispatch(actions.dealerElect());
+      const result = store.getActions();
+      expect(result[0].type).toEqual(actions.DEALER_ELECT);
+    });
+  });
+  describe('deckLoad', () => {
+    test('Dispatches the DECK_LOAD action', () => {
+      const store = mockStore({});
+      store.dispatch(actions.deckLoad());
+      const result = store.getActions();
+      expect(result[0].type).toEqual(actions.DECK_LOAD);
+    });
+  });
+  describe('deckShuffle', () => {
+    test('Dispatches the DECK_SHUFFLE action', () => {
+      const store = mockStore({});
+      store.dispatch(actions.deckShuffle());
+      const result = store.getActions();
+      expect(result[0].type).toEqual(actions.DECK_SHUFFLE);
+    });
+  });
   describe('gameReset', () => {
     test('Dispatches the GAME_RESET action', () => {
       const store = mockStore({});
@@ -14,36 +38,20 @@ describe('ctrl actions', () => {
       expect(result[0].type).toEqual(actions.GAME_RESET);
     });
   });
-  describe('electDealer', () => {
-    test('Dispatches the ELECT_DEALER action', () => {
+  describe('gameStart', () => {
+    test('Dispatches the GAME_START action', () => {
       const store = mockStore({});
-      store.dispatch(actions.electDealer());
+      store.dispatch(actions.gameStart());
       const result = store.getActions();
-      expect(result[0].type).toEqual(actions.ELECT_DEALER);
+      expect(result[0].type).toEqual(actions.GAME_START);
     });
   });
-  describe('loadPlayers', () => {
-    test('Dispatches the LOAD_PLAYERS action', () => {
+  describe('playersLoad', () => {
+    test('Dispatches the PLAYERS_LOAD action', () => {
       const store = mockStore({});
-      store.dispatch(actions.loadPlayers());
+      store.dispatch(actions.playersLoad());
       const result = store.getActions();
-      expect(result[0].type).toEqual(actions.LOAD_PLAYERS);
+      expect(result[0].type).toEqual(actions.PLAYERS_LOAD);
     });
   });  
-  describe('loadDeck', () => {
-    test('Dispatches the LOAD_DECK action', () => {
-      const store = mockStore({});
-      store.dispatch(actions.loadDeck());
-      const result = store.getActions();
-      expect(result[0].type).toEqual(actions.LOAD_DECK);
-    });
-  });
-  describe('shuffleDeck', () => {
-    test('Dispatches the SHUFFLE_DECK action', () => {
-      const store = mockStore({});
-      store.dispatch(actions.shuffleDeck());
-      const result = store.getActions();
-      expect(result[0].type).toEqual(actions.SHUFFLE_DECK);
-    });
-  });
 });
