@@ -12,31 +12,31 @@ export const laMorteReducer = (state = initialState, action) => {
             return initialState;
         case actions.GAME_START:
             return {
-                state,
+                ...state,
                 gameOver: false
             }
         case actions.PLAYERS_LOAD:
             return {
-                state,
+                ...state,
                 players: models.createPlayers(defaultPlayers),
             }
         case actions.DEALER_ELECT:
             return {
-                state,
+                ...state,
                 dealer: models.randomIndex(state.players.length),
             }
         case actions.DECK_LOAD:
             return {
-                state,
+                ...state,
                 deck: models.createDeck(),
             }
         case actions.DECK_SHUFFLE:
             return {
-                state,
+                ...state,
                 deck: models.shuffle(state.deck),
             }
         default:
-            return state
+            return { ...state }
     }
 }
 
