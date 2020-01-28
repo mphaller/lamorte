@@ -1,11 +1,18 @@
+import * as _ from 'lodash';
+
 import { card } from './card';
-import cardSuit from './cardSuit';
-import cardRank from './cardRank';
+import { cardSuit } from './cardSuit';
+import { cardRank } from './cardRank';
 
 export const deck = () => {
-    let cards = [card(cardRank.LA_MORTE, null)];
+    let cards = [];
+    const laMorteRank = _.pick(cardRank, ['LA_MORTE']);
+    for (const l in laMorteRank) {
+        cards.push(card(cardRank[l], null));
+    }
     for (const s in cardSuit) {
-        for (let r = cardRank.SEVEN; r < cardRank.LA_MORTE; r++) {
+        const suitedRanks = _.omit(cardRank, ['LA_MORTE']);
+        for (const r in suitedRanks) {
             cards.push(card(cardRank[r], cardSuit[s]));
         }
     }

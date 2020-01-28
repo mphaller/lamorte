@@ -3,13 +3,13 @@ import { createStore } from 'redux';
 import * as actions from './actions';
 import * as models from './models';
 
-export const initialState = models.createGame();
+export const initialState = { gameOver: true };
 export const defaultPlayers = ['North', 'East', 'South', 'West']; 
 
 export const laMorteReducer = (state = initialState, action) => {
     switch (action.type) {
         case actions.GAME_RESET:
-            return initialState;
+            return { ...initialState };
         case actions.GAME_START:
             return {
                 ...state,
@@ -35,6 +35,13 @@ export const laMorteReducer = (state = initialState, action) => {
                 ...state,
                 deck: models.shuffle(state.deck),
             }
+        case actions.ROUND_DEAL:
+            const result = { ...state };
+            for (const i in result.players) {
+                const player = result.players[i];
+                player.hand = models.sortCards(models.draw(state.deck, 9));
+            }
+            return result;
         default:
             return { ...state }
     }

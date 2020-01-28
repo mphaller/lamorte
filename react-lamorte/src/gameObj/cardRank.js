@@ -1,4 +1,4 @@
-const RANK = {
+export const cardRank = {
     LA_MORTE: 16,
     ACE: 15,
     KING: 14,
@@ -10,5 +10,3 @@ const RANK = {
     EIGHT: 8,
     SEVEN: 7,
 };
-
-export default RANK;

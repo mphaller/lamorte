@@ -7,4 +7,6 @@ import { gameStore } from './ctrl/reducer';
 
 import './styles/index.css';
 
-ReactDOM.render(<Provider store={gameStore}><App /></Provider>, document.getElementById('root'));
+const debug = true;
+
+ReactDOM.render(<Provider store={gameStore}><App debug={debug} /></Provider>, document.getElementById('LaMorte'));

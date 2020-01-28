@@ -1,0 +1,20 @@
+.Card {
+    border-radius: 4px;
+    color: black;
+    display: block;
+    height: 80px;
+    width: 48px;
+    padding:4px;
+}
+
+.Card.up {
+    background: white;
+}
+
+.Card.down {
+    background: maroon;
+}
+
+.Card .Values {
+    font-size: 10px;
+}

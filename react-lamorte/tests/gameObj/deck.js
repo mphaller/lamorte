@@ -1,6 +1,8 @@
 import * as _ from 'lodash';
 
-import { deck, cardRank } from '../../src/gameObj';
+import { deck } from '../../src/gameObj/deck';
+import { cardRank } from '../../src/gameObj/cardRank';
+
 
 describe('gameObj deck', () => {
     test('creates a La Morte deck for 3 or 4 players', () => {
@@ -8,7 +10,10 @@ describe('gameObj deck', () => {
         expect(result.length).toEqual(37);
     });
     test('creates a deck with La Morte in it', () => {
-        const result = _.filter(deck(), (card) => card.rank === cardRank.LA_MORTE);
+        const testDeck = deck();
+        const result = _.filter(testDeck, (card) => {
+            return card.rank === cardRank.LA_MORTE;
+        });
         const lamorte = result[0]; 
         expect(result.length).toEqual(1);
         expect(lamorte.id).toBeDefined();
