@@ -9,4 +9,9 @@ import './styles/index.css';
 
 const debug = true;
 
-ReactDOM.render(<Provider store={gameStore}><App debug={debug} /></Provider>, document.getElementById('LaMorte'));
+ReactDOM.render(
+    (
+        <Provider store={gameStore}>
+            <App debug={debug} />
+        </Provider>
+    ), document.getElementById('LaMorte'));

@@ -53,5 +53,5 @@ describe('ctrl actions', () => {
       const result = store.getActions();
       expect(result[0].type).toEqual(actions.PLAYERS_LOAD);
     });
-  });  
+  });
 });
