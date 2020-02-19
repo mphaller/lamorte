@@ -69,6 +69,24 @@ describe('laMorteReducer', () => {
                 expect(spy).toHaveBeenCalledWith(state.deck);
             });
         });
+        describe('ROUND_DEAL', () => {
+            test('deals cards from the deck to 4 players', () => {
+                const state = {
+                    test: true,
+                    players: [{hand: []},{hand: []},{hand: []},{hand: []}],
+                    deck: 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz',
+                }
+                const spies = [
+                    jest.spyOn(models, 'draw'),
+                    jest.spyOn(models, 'sortCards'),
+                ];
+                const action = actions.roundDeal();
+                laMorteReducer(state, action);
+                for (let s in spies) {
+                    expect(spies[s]).toHaveBeenCalled();
+                }
+            });
+        });
     });
     test('default does not alter state', () => {
         const state = { test: true };
