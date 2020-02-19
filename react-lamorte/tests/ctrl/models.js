@@ -4,7 +4,6 @@ import * as player from '../../src/gameObj/player';
 import * as gameState from '../../src/gameObj/gameState';
 import * as _ from 'lodash';
 
-// jest.mock('../../src/gameObj');
 jest.mock('lodash');
 
 describe('ctrl models', () => {
