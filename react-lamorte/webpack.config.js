@@ -1,11 +1,9 @@
 module.exports = {
-  entry: 'index.tsx',
+  entry: "index.tsx",
   output: {
-    filename: 'bundle.js'
+    filename: "bundle.js",
   },
   module: {
-    loaders: [
-      { test: /\.tsx$/, loader: 'awesome-typescript-loader' },
-    ],
-  }
-}
+    loaders: [{ test: /\.tsx$/, loader: "awesome-typescript-loader" }],
+  },
+};
