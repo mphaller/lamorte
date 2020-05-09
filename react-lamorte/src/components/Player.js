@@ -12,7 +12,7 @@ const Player = (props) => {
 
   return (
     <div className="Player">
-      {props.name}
+      <div className="Name">{props.name}</div>
       <div className="Hand">{renderHand()}</div>
     </div>
   );

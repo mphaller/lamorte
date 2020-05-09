@@ -1,10 +1,16 @@
 .Player {
-    text-align: left;
-    color: white;
-    background: green;
+  background: green;
+  color: white;
+  padding: 6px;
+  text-align: left;
+}
+.Player .Name {
+  margin-left: 30px;
 }
 .Player .Hand .Card {
-    display: inline-block;
-    margin: 6px;
-    vertical-align: top;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px black;
+  display: inline-block;
+  margin: 6px -60px 6px 30px;
+  vertical-align: top;
 }

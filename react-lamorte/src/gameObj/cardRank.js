@@ -1,6 +1,6 @@
 import compFunc from "../lib/stringCompareToListOrder";
 
-const LA_MORTE = "*";
+const LA_MORTE = "☺";
 const ACE = "1";
 const KING = "R";
 const QUEEN = "D";
