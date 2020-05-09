@@ -1,9 +1,9 @@
 import compFunc from "../lib/stringCompareToListOrder";
 
-const SWORDS = "S";
-const COINS = "D";
-const RODS = "B";
-const CUPS = "C";
+const SWORDS = "♠";
+const COINS = "♦";
+const RODS = "♣";
+const CUPS = "♥";
 
 const ORDERED_LIST = [SWORDS, COINS, RODS, CUPS];
 

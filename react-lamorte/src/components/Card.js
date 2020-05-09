@@ -7,7 +7,7 @@ const Card = (props) => {
   return (
     <div className={classNames(["Card", props.faceUp ? "up" : "down"])}>
       {props.faceUp && (
-        <div class="Values">
+        <div className={classNames(["Values", "Suit" + props.suit])}>
           <div>{props.rank}</div>
           <div>{props.suit}</div>
         </div>
