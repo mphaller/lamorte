@@ -4,9 +4,11 @@ import { connect } from "react-redux";
 import Game from "./Game";
 import Title from "./Title";
 
+import GameState from "../gameObj/GameState";
+
 import "../styles/App.css";
 
-const App = (props) => {
+const App = (props: AppProps) => {
   return (
     <div className="App">
       {props.state.gameOver && <Title />}
@@ -18,15 +20,15 @@ const App = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: GameState) => {
   return { state: state };
 };
 
-// const mapDispatchToProps = dispatch => {
-//   return {};
-// }
+interface AppProps {
+  debug: boolean,
+  state: GameState,
+}
 
 export default connect(
   mapStateToProps
-  //  mapDispatchToProps
 )(App);

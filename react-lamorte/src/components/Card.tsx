@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import "../styles/Card.css";
 
-const Card = (props) => {
+const Card = (props: CardProps) => {
   return (
     <div className={classNames(["Card", props.faceUp ? "up" : "down"])}>
       {props.faceUp && (
@@ -16,4 +16,10 @@ const Card = (props) => {
   );
 };
 
-export default Card;
+interface CardProps {
+  faceUp: boolean,
+  rank: string,
+  suit: string,
+}
+
+export { Card as default };

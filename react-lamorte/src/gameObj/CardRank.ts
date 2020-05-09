@@ -24,7 +24,7 @@ const ORDERED_LIST = [
   SEVEN,
 ];
 
-const comparator = (a, b) => compFunc(ORDERED_LIST, a, b);
+const comparator = (a: string, b: string) => compFunc(ORDERED_LIST, a, b);
 
 export {
   LA_MORTE,

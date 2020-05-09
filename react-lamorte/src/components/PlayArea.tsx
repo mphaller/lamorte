@@ -1,15 +1,17 @@
 import React from "react";
 
-import Card from "./Card";
+import CardComponent from "./Card";
+
+import Deck from "../gameObj/Deck";
 
 import "../styles/PlayArea.css";
 
-const PlayArea = (props) => {
+const PlayArea = (props: PlayAreaProps) => {
   const { deck } = props;
   const renderTalon = () => {
     if (deck && deck.length) {
       const talon = deck[0];
-      return <Card {...talon} />;
+      return <CardComponent {...talon} />;
     }
     return null;
   };
@@ -20,4 +22,8 @@ const PlayArea = (props) => {
   );
 };
 
-export default PlayArea;
+interface PlayAreaProps {
+  deck: Deck;
+}
+
+export { PlayArea as default };
