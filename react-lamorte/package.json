@@ -12,7 +12,7 @@
   "name": "react-lamorte",
   "version": "0.0.1",
   "dependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.1.3",
