@@ -31,8 +31,9 @@ describe('laMorteReducer', () => {
             test('creates four players', () => {
                 const state = { test: true };
                 const action = actions.playersLoad();
+                const spy = jest.spyOn(models, 'createPlayers');
                 laMorteReducer(state, action);
-                expect(models.createPlayers).toHaveBeenCalledWith(defaultPlayers);
+                expect(spy).toHaveBeenCalledWith(defaultPlayers);
             });
         });
         describe('DEALER_ELECT', () => {
@@ -42,16 +43,18 @@ describe('laMorteReducer', () => {
                     players: defaultPlayers
                 };
                 const action = actions.dealerElect();
+                const spy = jest.spyOn(models, 'randomIndex');
                 laMorteReducer(state, action);
-                expect(models.randomIndex).toHaveBeenCalledWith(defaultPlayers.length);
+                expect(spy).toHaveBeenCalledWith(defaultPlayers.length);
             });
         });
         describe('DECK_LOAD', () => {
             test('creates a deck to play with', () => {
                 const state = { test: true };
                 const action = actions.deckLoad();
+                const spy = jest.spyOn(models, 'createDeck');
                 laMorteReducer(state, action);
-                expect(models.createDeck).toHaveBeenCalled();
+                expect(spy).toHaveBeenCalled();
             });
         });
         describe('DECK_SHUFFLE', () => {
@@ -61,15 +64,11 @@ describe('laMorteReducer', () => {
                     deck: ['cleese', 'idle', 'chapman', 'jones', 'gilliam', 'palin']
                 };
                 const action = actions.deckShuffle();
+                const spy = jest.spyOn(models, 'shuffle');
                 laMorteReducer(state, action);
-                expect(models.shuffle).toHaveBeenCalledWith(state.deck);
+                expect(spy).toHaveBeenCalledWith(state.deck);
             });
         });
-    });
-    test('initialState', () => {
-        const action = { type: 'TEST' };
-        const result = laMorteReducer(undefined, action);
-        expect(result).toEqual(initialState);
     });
     test('default does not alter state', () => {
         const state = { test: true };

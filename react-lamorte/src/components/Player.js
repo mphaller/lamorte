@@ -1,12 +1,22 @@
 import React from 'react';
-// import '../styles/Player.css';
 
-const Player = () => {
-  return (
-    <div className="Player">
+import Card from './Card';
 
-    </div>
-  );
+import '../styles/Player.css';
+
+const Player = props => {
+    const renderHand = () => props.hand.map(card => (
+        <Card {...card} faceUp={card.faceUp || props.debug} />
+    ));
+
+    return (
+      <div className="Player">
+          {props.name}
+          <div className="Hand">
+              {renderHand()}
+          </div>
+      </div>
+    );
 }
 
 export default Player;

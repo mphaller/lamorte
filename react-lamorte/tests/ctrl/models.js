@@ -1,8 +1,10 @@
 import * as models from '../../src/ctrl/models';
-import * as gameObj from '../../src/gameObj';
+import * as deck from '../../src/gameObj/deck';
+import * as player from '../../src/gameObj/player';
+import * as gameState from '../../src/gameObj/gameState';
 import * as _ from 'lodash';
 
-jest.mock('../../src/gameObj');
+// jest.mock('../../src/gameObj');
 jest.mock('lodash');
 
 describe('ctrl models', () => {
@@ -20,31 +22,35 @@ describe('ctrl models', () => {
     });
     describe('createGame', () => {
         test('generates game data', () => {
+            const spy = jest.spyOn(gameState, 'gameState');
             models.createGame();
-            expect(gameObj.gameState).toHaveBeenCalled();
+            expect(spy).toHaveBeenCalled();
         });
     });
     describe('createDeck', () => {
         test('generates the La Morte deck', () => {
+            const spy = jest.spyOn(deck, 'deck');
             models.createDeck();
-            expect(gameObj.deck).toHaveBeenCalled();
+            expect(spy).toHaveBeenCalled();
         });
     });
     describe('createPlayers', () => {
         test('generates player data', () => {
             const names = ['frodo', 'bilbo', 'gandalf'];
+            const spy = jest.spyOn(player, 'player');
             models.createPlayers(names);
-            expect(gameObj.player).toHaveBeenCalledTimes(names.length);
+            expect(spy).toHaveBeenCalledTimes(names.length);
             for(let i = 0; i < names.length; i++) {
-                expect(gameObj.player).toHaveBeenCalledWith(names[i]);
+                expect(spy).toHaveBeenCalledWith(names[i]);
             }
         });
     });
     describe('shuffle', () => {
         test('uses lodash to shuffle an array', () => {
             const names = ['wei', 'wu', 'shuhan'];
+            const spy = jest.spyOn(_, 'shuffle');
             models.shuffle(names);
-            expect(_.shuffle).toHaveBeenCalled();
+            expect(spy).toHaveBeenCalled();
         });
     });
 });

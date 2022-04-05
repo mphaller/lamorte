@@ -1,5 +1,4 @@
-import { player } from '../../src/gameObj';
-import { DEFAULT_NAME } from '../../src/gameObj/player';
+import { player, DEFAULT_NAME } from '../../src/gameObj/player';
 
 describe('gameObj player', () => {
     test('generates the player state with an assigned name', () => {

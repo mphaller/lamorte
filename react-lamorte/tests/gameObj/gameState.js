@@ -1,4 +1,4 @@
-import { gameState } from '../../src/gameObj';
+import { gameState } from '../../src/gameObj/gameState';
 
 describe('gameObj gameState', () => {
     test('generates the game state', () => {

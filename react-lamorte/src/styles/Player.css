@@ -1,0 +1,10 @@
+.Player {
+    text-align: left;
+    color: white;
+    background: green;
+}
+.Player .Hand .Card {
+    display: inline-block;
+    margin: 6px;
+    vertical-align: top;
+}
